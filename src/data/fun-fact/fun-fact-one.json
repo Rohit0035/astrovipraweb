@@ -1,0 +1,21 @@
+[
+  {
+    "id": "1",
+    "iconClass": "pe-7s-add-user",
+    "countNum": 1300,
+    "title": "Satisfied Clients"
+  },
+  {
+    "id": "2",
+    "iconClass": "pe-7s-add-user",
+    "countNum": 20,
+    "title": "Astrologers"
+  },
+  {
+    "id": "3",
+    "iconClass": "pe-7s-add-user",
+    "countNum": 4000,
+    "title": "Registered Users"
+  }
+  
+]

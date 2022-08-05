@@ -1,0 +1,335 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~swiper/css/swiper.css";
+@import "~animate.css/animate.min.css";
+@import "~lightgallery.js/dist/css/lightgallery.css";
+@import "~react-modal-video/scss/modal-video.scss";
+@import "../css/icons.min.css";
+
+@import "variables";
+@import "helper";
+@import "common";
+@import "preloader";
+@import "header";
+@import "slider";
+@import "support";
+@import "section-title";
+@import "product";
+@import "blog";
+@import "footer";
+@import "banner";
+@import "suscribe";
+@import "about";
+@import "image-slider";
+@import "testimonial";
+@import "brand-logo";
+@import "timers";
+@import "breadcrumb";
+@import "sidebar";
+@import "shop";
+@import "product-details";
+@import "cart";
+@import "compare";
+@import "checkout";
+@import "contact";
+@import "blog-details";
+@import "login-register";
+@import "my-account";
+@import "404";
+@import "video-popup";
+
+
+// rohit css 
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+img.st-1 {
+     width: 100%;
+     animation-name: spin;
+     animation-duration: 5000ms;
+     animation-iteration-count: infinite;
+     animation-timing-function: linear; 
+        
+}
+img.st-2 {
+    width: 20%;
+    position: absolute;
+    top: 25%;
+    left: 60%;
+}
+h1.st-3 {
+    font-size: 65px;
+    color: #fff;
+    line-height: 70px;
+    margin-top: 20px;
+}
+p.st-4 {
+    font-size: 18px;
+    line-height: 30px;
+}
+.single-slider-2.slider-height-1.d-flex.align-items-center.bg-img.st-5.swiper-slide.swiper-slide-active {
+    padding: 70px 0px;
+}
+a.st-6 {
+    color: #230707;
+    background: #fff;
+    padding: 13px 26px;
+    border-radius: 100px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+// feature home css 
+
+.feat-icon {
+    width: 100px;
+    margin-bottom: 14px;
+    height: 100px;
+    background: #ff6f00;
+    font-size: 40px;
+    color: #fff;
+    font-weight: bold;
+    padding: 30px;
+    border-radius: 100px;
+}
+.bx-f {
+    padding: 20px;
+    box-shadow: 0 0 6px #a99e9e;
+    border-radius: 15px;
+    margin: 35px 0px;
+}
+
+// team home 
+
+.team-wrapper {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 6px #a99e9e;
+}
+
+// logotext
+h3.stltext {
+    color: #ff6f00;
+    font-weight: 700;
+}
+
+// home category css
+
+.heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+section.stt-1 {
+    background: #f1f1f154;
+    padding: 50px  0px;
+}
+.bx-1 {
+    text-align: center;
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    img{
+        width: 50px;
+        height: 50px;
+        padding: 6px;
+        border-radius: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    }
+    h5{
+        font-size: 22px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+    p{
+        font-size: 16px;
+        margin-top: 4px;
+        margin-bottom: 15px;
+    }
+}
+
+.bx-1:hover{
+    background:  #ff6f00 ;
+   
+    h5{
+        color: #fff;
+    }
+    p{
+        color: #fff;
+    }
+}
+
+.statusonline {
+    display: inline-block;
+}
+.statusbox {
+    padding: 10px;
+    padding-bottom: 20px;
+    display: inline-block;
+}
+.statusonline {
+    float: left;
+    width: 120px;
+    
+}
+.statusonline span{
+    background: #04b43c;
+    padding: 6px 12px;
+    color: #ffff;
+    border-radius: 100px;
+    font-weight: 600;
+}
+
+// astrologer detail css
+img.pic-as {
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+}
+// section.astroprofile {
+//     margin-top: 0px;
+// }
+button.btn-as.st.btn.btn-secondary {
+    background: #fc6e00;
+    border: none;
+    padding: 10px 40px;
+    margin-top: 20px;
+    border-radius: 100px;
+}
+small.sm-text {
+    margin-left: 9px;
+    font-size: 11px;
+}
+
+.statusonline2 span{
+    background: #ff6f00;
+    padding: 6px 12px;
+    color: #fff;
+    border-radius: 100px;
+    font-weight: 600;
+}
+  
+.statusonline2 {
+    float: right;
+    width: 130px;
+    text-align: right;
+}
+
+.slider-content-brown.slider-content-2.slider-content-2--white.slider-animated-1.mtt {
+    margin-top: 80px;
+}
+.slider-btn-brown a {   
+    background-color: #ff6f00 !important;
+}
+.product-tab-list {
+    justify-content: left;
+}
+h3.s-tt {
+    padding-left: 42px;
+    padding-bottom: 24px;
+    font-weight: 500;
+    margin-top: 10px
+}
+.product-tab-list a.active h4, .product-tab-list a.active .h4 {
+    color: #ff6f00;
+}
+.tab-st {
+    background: #cccccc1a;
+    padding-top: 50px 0px;
+    padding: 60px 0px;
+}
+.heading.bt {
+    margin-bottom: 20px;
+}
+.ab-img{
+    width: 100%;
+}
+p.ptext {
+    padding: 0 180px;
+}
+
+// aboutdeatilpage css
+.ourm {
+    margin-top: 40px;
+    padding: 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    h2{
+        color:#ff6f00;
+    }
+    p{
+        color:#000;
+    }
+
+}
+
+.as-content ul{
+    line-height: 30px;
+}
+.description-review-topbar {
+    justify-content: left;
+}
+section.dt-astro{
+    background: #cccccc26;
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    margin-top: 37px;
+}
+
+// astrosignup
+.stp-1 {
+    width: 70%;
+    background: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.active .bs-stepper-circle {
+    background-color: #ff6f00 !important;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #ff6f00 !important;
+    border-color: #ff6f00 !important;
+}
+.bs-stepper-label {
+    color: #ff6f00 !important ;
+}
+.astro-login {
+    width: 50%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+h2.th-1 {
+    text-align: center;
+    font-weight: bold;
+    color: #ff5722;
+}
+h4.th-2 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+}
+button.ntb {
+    border: none;
+    background: #ff5722;
+    color: #fff;
+    width: 80%;
+    padding: 10px 50px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+
