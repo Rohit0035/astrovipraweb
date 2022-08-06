@@ -23,7 +23,7 @@ class AstrologerDetail extends React.Component {
     <LayoutOne headerTop="visible">
     <div className="col-lg-12 col-md-12 mb-30">
       <div className="category-home">
-      <section className="">
+      <section className="pt-0">
       <div
           className="d-flex justify-content-center align-items-center"
           style={{

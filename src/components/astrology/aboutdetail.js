@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom";
 import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap";
-import textbottom from "../../assets/img/textbottom.png";
 // import aboutimg from "../../assets/img/aboutimg.jpg";
-import aboutone from "../../assets/img/aboutone.jpg";
-import abouttwo from "../../assets/img/abouttwo.jpg";
+import aboutone from "../../assets/img/aboutone.png";
+import abouttwo from "../../assets/img/abouttwo.png";
 import LayoutOne from "../../layouts/LayoutOne";
+import pagetitle  from "../../assets/img/pagetitle.jpg";
 
 
 class AboutDetail extends React.Component {
@@ -20,24 +20,36 @@ class AboutDetail extends React.Component {
     <LayoutOne headerTop="visible">
     <div className="col-lg-12 col-md-12 mb-30">
       <div className="category-home">
-      <section >
-         <div className="headingtitle text-center ptb-40">
-              <h2>About Us</h2>
-              <img src={textbottom} alt="" className="sb-img"/>
-         </div> 
+      <section className="pt-0" >
+      <div
+          className="d-flex justify-content-center align-items-center"
+          style={{
+            backgroundImage: `url(${pagetitle})`,
+            width: "100%",
+            padding:"70px 0px",
+            backgroundSize:"cover"
+          }}
+        >
+        <h2
+         style={{
+            color:"#fff"
+          }}
+        > About Us</h2>
+      </div>
       <Container>
         
              <Row>
-                 <Col lg="6">
-                    <div >
-                         <img src={aboutone} alt="" className="ab-img"></img>
-                    </div>
-                 </Col>
+                 
                   <Col lg="6">
-                    <div className="">
+                    <div className="abo-1">
                         <h3>WHAT WE DO</h3>
                         <p>AstroVipra brings together astrologers and their boundless knowledge about the occult science of Astrology on one platform and lets you connect with them 24*7. Apart from the best future predictions that help you get through the difficult phase of life, AstroVipra also offers Free Live astrology sessions, Daily horoscope, Free kundli matching service, Spiritual store and much more.</p>
 
+                    </div>
+                 </Col>
+                 <Col lg="6">
+                    <div className="abo-2">
+                          <img src={aboutone} alt="" className="ab-img"></img>
                     </div>
                  </Col>
 

@@ -37,6 +37,8 @@
 @import "404";
 @import "video-popup";
 
+// astroteam
+@import "../scss//astroteam.scss";
 
 // rohit css 
 @keyframes spin {
@@ -282,6 +284,22 @@ section.dt-astro{
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     margin-top: 37px;
 }
+.ab-img {
+    width: 400px;
+}
+.abo-1 {
+    padding-top: 150px;
+    h3{
+        font-size: 24px;
+        line-height: 30px;
+        color: #ff5722;
+        font-weight: 700;
+    }
+}
+.abo-2 {
+    padding-top: 65px;
+    text-align: center;
+}
 
 // astrosignup
 .stp-1 {
@@ -290,6 +308,7 @@ section.dt-astro{
     margin: 0 auto;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
 }
 .active .bs-stepper-circle {
     background-color: #ff6f00 !important;
@@ -332,4 +351,11 @@ button.ntb {
     margin-top: 20px;
 }
 
+// react-select
 
+.css-6j8wv5-Input{
+    height: 35px !important;
+}
+label {
+    font-size: 12px;
+}

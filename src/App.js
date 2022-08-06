@@ -134,6 +134,8 @@ const AboutDetail = lazy(() => import("./components/astrology/aboutdetail"));
 const AstrologerDetail = lazy(() => import("./components/astrology/astrologerdetail"));
 const AstrologerSignup = lazy(() => import("./components/astrology/astrologersignup"));
 const AstrologerLogin = lazy(() => import("./components/astrology/astrologerlogin"));
+const AstroTeam = lazy(() => import("./components/astrology/astroteam"));
+const SectionPooja = lazy(() => import("./components/astrology/sectionpooja"));
 
 const Cart = lazy(() => import("./pages/other/Cart"));
 const MyOrder = lazy(() => import("./pages/other/MyOrder"));
@@ -477,6 +479,15 @@ const App = (props) => {
                  <Route
                   path={process.env.PUBLIC_URL + "/astrologerlogin"}
                   component={AstrologerLogin}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/astroteam"}
+                  component={AstroTeam}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/sectionpooja"}
+                  component={SectionPooja}
                 />
 
                 <Route

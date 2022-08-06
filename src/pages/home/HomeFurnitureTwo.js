@@ -2,7 +2,7 @@ import React from "react";
 import HeroSliderTwentyNine from "../../wrappers/hero-slider/HeroSliderTwentyNine";
 // import FirstSectiontwo from "../../wrappers/content-home/FirstSectiontwo";
 // import FirstSectiontree from "../../wrappers/content-home/FirstSectiontree";
-import TeamMemberOne from "../../wrappers/team-member/TeamMemberOne";
+// import TeamMemberOne from "../../wrappers/team-member/TeamMemberOne";
 
 // import SecondSection from "../../wrappers/content-home/SecondSection";
 // import NewsletterTwo from "../../wrappers/newsletter/NewsletterTwo";
@@ -22,6 +22,8 @@ import TestimonialOne from "../../wrappers/testimonial/TestimonialOne";
 import FunFactOne from "../../wrappers/fun-fact/FunFactOne";
 import AboutUs from "../../components/astrology/aboutus";
 import FeatureIconSix from "../../wrappers/feature-icon/FeatureIconSix";
+import SectionPooja from "../../components/astrology/sectionpooja";
+import AstroTeam from "../../components/astrology/astroteam";
 
 
 const HomeFurnitureTwo = () => {
@@ -36,7 +38,7 @@ const HomeFurnitureTwo = () => {
       {/* Second section */}
 
        {/* feature text */}
-       <FeatureIconSix spaceBottomClass="pb-100" spaceTopClass="pt-30" />
+       <FeatureIconSix spaceBottomClass="pb-30" spaceTopClass="pt-30" />
 
       <AboutUs />
       {/* abutus */}
@@ -44,11 +46,18 @@ const HomeFurnitureTwo = () => {
       <PredictionallHome />
       {/* third section */}
 
+      
+
       {/* <FirstSectiontwo /> */}
       {/* Second Store */}
 
       {/* <FirstSectiontree /> */}
-      <TeamMemberOne spaceTopClass="pt-95" spaceBottomClass="pb-70" />
+      {/* <TeamMemberOne spaceTopClass="pt-95" spaceBottomClass="pb-70" /> */}
+      <AstroTeam/>
+   
+      <SectionPooja/>
+      {/* third section */}
+
       {/* Product slider */}
       {/* <SecondSection /> */}
       {/* Browse by category */}
@@ -58,8 +67,8 @@ const HomeFurnitureTwo = () => {
 
      {/* fun fact */}
        <FunFactOne
-          spaceTopClass="pt-100"
-          spaceBottomClass="pb-70"
+          spaceTopClass="pt-30"
+          spaceBottomClass="pb-30"
           
         />
 
