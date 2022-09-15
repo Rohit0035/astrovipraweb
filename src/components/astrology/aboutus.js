@@ -2,7 +2,8 @@ import React from "react"
 import { Link } from "react-router-dom";
 import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap";
 import textbottom from "../../assets/img/textbottom.png";
-import aboutimg from "../../assets/img/aboutimg.jpg";
+import Abotimg from "../../assets/img/abot.png";
+
 
 
 class AboutUs extends React.Component {
@@ -25,7 +26,7 @@ class AboutUs extends React.Component {
              <Row>
                  <Col lg="6">
                     <div >
-                         <img src={aboutimg} alt="" className="ab-img"></img>
+                         <img src={Abotimg} alt="" gclassName="ab-img"  width="500px"/>
                     </div>
                  </Col>
                   <Col lg="6">

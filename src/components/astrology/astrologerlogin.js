@@ -1,12 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom";
 import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap";
-import women from "../../assets/img/women.jpg";
-import LayoutOne from "../../layouts/LayoutOne";
-import Tab from "react-bootstrap/Tab";
-import Rating from "@mui/material/Rating";
-import LinearProgress from "@mui/material/LinearProgress";
-import Nav from "react-bootstrap/Nav";
 import astrologinbg  from "../../assets/img/astrologin-bg.jpg";
 
 

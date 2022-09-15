@@ -48,7 +48,7 @@ const FooterOne = ({
         <div className="row">
           <div
             className={`${
-              sideMenu ? "col-xl-2 col-sm-4" : "col-lg-2 col-sm-4"
+              sideMenu ? "col-xl-3 col-sm-4" : "col-lg-3 col-sm-4"
             }`}
           >
             {/* footer copyright */}
@@ -59,7 +59,7 @@ const FooterOne = ({
               spaceBottomClass="mb-30"
             />
           </div>
-          <div
+          {/* <div
             className={`${
               sideMenu ? "col-xl-2 col-sm-4" : "col-lg-2 col-sm-4"
             }`}
@@ -70,27 +70,14 @@ const FooterOne = ({
               </div>
               <div className="footer-list">
                 <ul>
-                  <li>
-                    <Link to={process.env.PUBLIC_URL + "/about"}>About us</Link>
-                  </li>
-
-                  <li>
-                    <Link to={process.env.PUBLIC_URL + "/contact"}>
-                      Contact
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={process.env.PUBLIC_URL + "#/"}>
-                      Orders tracking
-                    </Link>
-                  </li>
+                 
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
           <div
             className={`${
-              sideMenu ? "col-xl-2 col-sm-4" : "col-lg-2 col-sm-4"
+              sideMenu ? "col-xl-3 col-sm-4" : "col-lg-3 col-sm-4"
             }`}
           >
             <div
@@ -106,6 +93,29 @@ const FooterOne = ({
               <div className="footer-list">
                 <ul>
                   <li>
+                  <li>
+                    <Link to={process.env.PUBLIC_URL + "/ourservice"}>Our Services</Link>
+                  </li>
+                  <li>
+                    <Link to={process.env.PUBLIC_URL + "/freekundli"}>Free Kundli</Link>
+                  </li>
+                  <li>
+                    <Link to={process.env.PUBLIC_URL + "/blog"}>Blog</Link>
+                  </li>
+                  <li>
+                    <Link to={process.env.PUBLIC_URL + "/aboutdetail"}>About us</Link>
+                  </li>
+
+                  <li>
+                    <Link to={process.env.PUBLIC_URL + "/contact"}>
+                      Contact
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={process.env.PUBLIC_URL + "#/"}>
+                      Orders tracking
+                    </Link>
+                  </li>
                     <Link to={process.env.PUBLIC_URL + "/TermsOfUse"}>
                       Terms of Use
                     </Link>
@@ -124,7 +134,7 @@ const FooterOne = ({
           </div>
           <div
             className={`${
-              sideMenu ? "col-xl-3 col-sm-4" : "col-lg-2 col-sm-6"
+              sideMenu ? "col-xl-3 col-sm-4" : "col-lg-3 col-sm-6"
             }`}
           >
             <div
@@ -140,6 +150,7 @@ const FooterOne = ({
               <div className="footer-list">
                 <ul>
                   <li>
+                    <i class="fa fa-facebook foot-icon" aria-hidden="true"></i>
                     <a
                       href="//www.facebook.com"
                       target="_blank"
@@ -149,6 +160,8 @@ const FooterOne = ({
                     </a>
                   </li>
                   <li>
+                    <i class="fa fa-twitter foot-icon" aria-hidden="true"></i>
+
                     <a
                       href="//www.twitter.com"
                       target="_blank"
@@ -158,6 +171,8 @@ const FooterOne = ({
                     </a>
                   </li>
                   <li>
+                    <i class="fa fa-instagram foot-icon" aria-hidden="true"></i>
+
                     <a
                       href="//www.instagram.com"
                       target="_blank"
@@ -167,6 +182,7 @@ const FooterOne = ({
                     </a>
                   </li>
                   <li>
+                    <i class="fa fa-youtube-play foot-icon" aria-hidden="true"></i>
                     <a
                       href="//www.youtube.com"
                       target="_blank"
@@ -181,7 +197,7 @@ const FooterOne = ({
           </div>
           <div
             className={`${
-              sideMenu ? "col-xl-3 col-sm-8" : "col-lg-4 col-sm-6"
+              sideMenu ? "col-xl-3 col-sm-8" : "col-lg-3 col-sm-6"
             }`}
           >
             {/* footer newsletter */}

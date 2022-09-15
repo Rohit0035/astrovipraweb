@@ -58,7 +58,7 @@
           color: #ff6f00;
           span {
             &.count-style {
-              color: #fff;
+              color: #000;
               background-color: #1877f2;
             }
           }
@@ -356,7 +356,7 @@
 
           letter-spacing: 0.8px;
 
-          color: #fff;
+          color: #000;
           i {
             font-size: 15px;
 
@@ -390,7 +390,7 @@
           > a {
             line-height: 112px;
 
-            color: #ffffff;
+            color: #000;
           }
         }
       }
@@ -398,7 +398,7 @@
   }
 }
 .stick .main-menu.menu-white nav ul li a {
-  color: #fff;
+  color: #000;
   &:hover {
     color: $theme-color;
   }
@@ -580,7 +580,7 @@
 
       padding: 0;
 
-      color: #fff;
+      color: #000;
       border: none;
       background: transparent;
       span.count-style {
@@ -598,7 +598,7 @@
 
         text-align: center;
 
-        color: #fff;
+        color: #000;
         border-radius: 100%;
         background-color: #ff6f00;
         @media #{$xl-layout} {
@@ -751,7 +751,7 @@
     margin-top: 40px;
     .same-style {
       > a {
-        color: #fff;
+        color: #000;
       }
 
       &.cart-wrap,
@@ -761,7 +761,7 @@
       &.header-search {
         > button,
         & > a {
-          color: #fff;
+          color: #000;
           span {
             &.count-style {
               color: #000;
@@ -790,7 +790,7 @@
             color: #000;
             span {
               &.count-style {
-                color: #fff;
+                color: #000;
                 background-color: #000;
               }
             }
@@ -815,7 +815,7 @@
             color: #000;
             span {
               &.count-style {
-                color: #fff;
+                color: #000;
                 background-color: #000;
               }
             }
@@ -886,7 +886,7 @@
           transition: all 0.4s ease 0s;
           text-transform: uppercase;
 
-          color: #ffffff;
+          color: #000;
           border: none;
           border-color: #ce9634;
           background: $theme-color;
@@ -959,8 +959,8 @@
 }
 
 .header-top-area {
-  border-bottom: 1px solid #d5d4d4;
-  background: #120d13;
+  border-bottom: 1px solid #fff;
+  background: #FFD59E;
   .header-top-wap {
     display: flex;
     align-items: center;
@@ -988,9 +988,9 @@
 
     letter-spacing: 0.8px;
 
-    color: #fff;
+    color: #000;
     span {
-      color: #fff;
+      color: #000;
     }
     @media #{$xs-layout} {
       text-align: center;
@@ -1024,7 +1024,7 @@
       content: "";
       transform: translateY(-50%);
 
-      background-color: #d5d4d4;
+      background-color:#000;
       @media #{$xs-layout} {
         right: -10px;
       }
@@ -1045,7 +1045,7 @@
       cursor: pointer;
       letter-spacing: 0.8px;
 
-      color: #fff;
+      color: #000;
       @media #{$xs-layout} {
         line-height: 35px;
       }
@@ -1058,7 +1058,7 @@
         position: relative;
         top: 2px;
 
-        color: #fff;
+        color: #000;
       }
     }
     .lang-car-dropdown {
@@ -1103,12 +1103,12 @@
 
       letter-spacing: 0.8px;
 
-      color: #fff;
+      color: #000;
     }
     &:hover {
       & > a,
       span {
-        color: #fff;
+        color: #000;
       }
 
       .lang-car-dropdown {
@@ -1600,7 +1600,7 @@
 
     display: inline-block;
 
-    color: #fff;
+    color: #000;
     border: none;
     background: none;
     &:hover {
@@ -1760,7 +1760,7 @@
 
       margin-top: 35px;
 
-      color: #fff;
+      color: #000;
       border: none;
       background: none;
       &:hover {
@@ -2150,7 +2150,7 @@
 
   text-align: center;
 
-  color: #fff;
+  color: #000;
   border: none;
   background: #343538;
 
@@ -2512,5 +2512,13 @@
 // rohit css
 
 .sticky-bar.header-res-padding.clearfix {
-  background: #120d13;
+  background: #fff;
+}
+
+button.account-setting-active i {
+  color: #000;
+}
+span.username {
+  color: #000;
+  font-weight: 600;
 }

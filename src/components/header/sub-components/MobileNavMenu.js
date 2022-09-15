@@ -155,14 +155,85 @@ const MobileNavMenu = ({ strings }) => {
         </li>
 
           <li>
-              <Link>Services</Link>
-          </li>
+              <Link to="/kundaliform">Kundli Matching</Link>
+           </li>
 
-        <li>
-          <Link to={process.env.PUBLIC_URL + "/aboutdetail"}>
-            {strings["about_us"]}
-          </Link>
-        </li>
+            <li>
+               <Link to="/allastrologerlist">Talk Astrologer</Link>
+           </li>
+
+             <li>
+              <Link>Horoscopes</Link>
+                <ul className="submenu">
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Horoscope 2022"]} */}
+                            Horoscope 2022
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Today's Horoscope"]} */}
+                            Today's Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Weekly Horoscope"]} */}
+                            Weekly Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Monthly Horoscope"]} */}
+                            Monthly Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Yearly Horoscope"]} */}
+                            Yearly Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Daily Horoscope"]} */}
+                            Daily Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Tomorrow's Horoscope"]} */}
+                            Tomorrow's Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Yesterday's Horoscope"]} */}
+                             Yesterday's Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings[" Chinese Horoscope"]} */}
+                             Chinese Horoscope
+                          </Link>
+                    </li>
+                </ul>
+             </li>
+
+             <li className="">
+                <Link to={process.env.PUBLIC_URL + "/astromallList"}>
+                    {/* {strings["Monthly Horoscope"]} */}
+                     Astromall
+                 </Link>
+              </li>
+
+            {/* <li>
+              <Link to={process.env.PUBLIC_URL + "/aboutdetail"}>
+                {strings["about_us"]}
+              </Link>
+            </li> */}
         {/* {sidebarMenu ? (
                 <span>
                    <i className="fa fa-angle-right"></i> 

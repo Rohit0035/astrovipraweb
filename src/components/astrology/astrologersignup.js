@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 // import render  from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bs-stepper/dist/css/bs-stepper.min.css';
@@ -7,58 +7,99 @@ import Stepper from 'bs-stepper'
 import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap";
 import astrologinbg  from "../../assets/img/astrologin-bg.jpg";
 import Select from 'react-select';
+import swal from "sweetalert";
+import axios from "axios";
+
 // import { colourOptions } from '../astrology/selectdata/data.ts';
-
-const options = [
-  { value: 'Male', label: 'Male' },
-  { value: 'Female', label: 'Female' },
-];
-
-const colourptions  = [
-     { value: 'ocean', label: 'Ocean', color: '#00B8D9', isFixed: true },
-     { value: 'blue', label: 'Blue', color: '#0052CC', isDisabled: true },
-     { value: 'purple', label: 'Purple', color: '#5243AA' },
-     { value: 'red', label: 'Red', color: '#FF5630', isFixed: true },
-     { value: 'orange', label: 'Orange', color: '#FF8B00' },
-     { value: 'yellow', label: 'Yellow', color: '#FFC400' },
-     { value: 'green', label: 'Green', color: '#36B37E' },
-     { value: 'forest', label: 'Forest', color: '#00875A' },
-     { value: 'slate', label: 'Slate', color: '#253858' },
-     { value: 'silver', label: 'Silver', color: '#666666' },
-   ];
 
 class AstrologerSignup extends React.Component {
  
   constructor() {
     super();
     this.state = {
-      name: 'React',
+     //  fullnames: 'React',
+      fullname:"",
+      email:"",
+      mobile:"",
+     //  password:"",
+     //  cnfmPassword:"",
+      otp:"",
+      gender:"",
+      dob:"",
+      primary_skills:"",
+      all_skills:"",
+      language:"",
+      exp_in_years:"",
+      conrubute_hrs:"",
+      hear_abt_astrology :"",
+      other_online_platform :"",
+      why_onboard_you :"",
+      suitable_tym_interview:"",
+      crnt_city :"",
+      income_src:"",
+      highest_qualification:"",
+      degree_deploma:"",
+      clg_scl_name:"",
+      lrn_abt_astrology:"",
+      insta_link:"",
+      fb_link:"",
+      linkedln_link:"",
+      youtube_link:"",
+      website_link:"",
+      anybody_prefer:"",
+      min_earning_expe:"",
+      max_earning_expe:"",
+      long_bio:"",
+
     };
 
-   
-  }
+}
 
   
-  componentDidMount() {
+componentDidMount() {
     this.stepper = new Stepper(document.querySelector('#stepper1'), {
       linear: false,
       animation: true
     })
-  }
+}
 
-  onSubmit(e) {
-    e.preventDefault()
-  }
-  
+handlechange = (e) => {
+     // e.preventDefault();
+     this.setState({ [e.target.name]: e.target.value });
+};
+
+changeHandler = (e) => {
+     e.preventDefault();
+     this.setState({ [e.target.name]: e.target.value });
+};
+ 
+submitHandler = (e) => {
+     e.preventDefault();
+     // this.setState({ otp: false });
+     axios
+       .post("http://13.235.180.192:8000/user/astrosignup", this.state)
+       .then((response) => {
+         console.log(response);
+         localStorage.setItem("auth-token", response.data.token);
+         this.setState({
+           token: response.data.token,
+         });
+         swal("Success!", " Register Successful Done!", "success");
+         this.props.history.push("/");
+       })
+       .catch((error) => {
+         console.log(error.response);
+           swal("Error!", "Something went wrong", "error");
+       });
+
+   };
 
   render() {
-
-    const { selectedOption } = this.state;
 
     return (
           <section className=""
           style={{
-          backgroundImage: `url(${astrologinbg})`,
+            backgroundImage: `url(${astrologinbg})`,
             width: "100%",
             padding:"50px 0px",
             height: "100%",
@@ -66,7 +107,7 @@ class AstrologerSignup extends React.Component {
           }}
         >
          <Container>
-              <section className="mtb-50">
+              <section className="ptb-30">
                 <div className="stp-1">
                     <h2 className="th-1">AstroVipra</h2>
                     <h4 className="th-2">Astrologer Register</h4>
@@ -79,9 +120,16 @@ class AstrologerSignup extends React.Component {
                         </button>
                       </div>
                       <div class="line"></div>
-                      <div class="step" data-target="#test-l-2">
+                      <div class="step" data-target="#test-otp">
                         <button class="step-trigger">
                           <span class="bs-stepper-circle">2</span>
+                          <span class="bs-stepper-label">Verify OTP</span>
+                        </button>
+                      </div>
+                      <div class="line"></div>
+                      <div class="step" data-target="#test-l-2">
+                        <button class="step-trigger">
+                          <span class="bs-stepper-circle">3</span>
                           <span class="bs-stepper-label">Skill Details</span>
                         </button>
                       </div>
@@ -93,109 +141,230 @@ class AstrologerSignup extends React.Component {
                         </button>
                       </div>
                     </div>
+                    
                     <div class="bs-stepper-content">
-                      <form onSubmit={this.onSubmit}>
+                      <form onSubmit={this.submitHandler}>
                         <div id="test-l-1" class="content">
                             <Row>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Name*</label>
-                                          <input type="email" class="form-control"  placeholder="Name" />
+                                          <label>Name*</label>
+                                          <input
+                                                type="text"
+                                                name="fullname"
+                                                required
+                                                placeholder="Enter Your Fullname"
+                                                value={this.state.fullname}
+                                                onChange={this.changeHandler}
+                                          />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Email address*</label>
-                                          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+                                          <label>Email address*</label>
+                                          <input
+                                                type="email"
+                                                name="email"
+                                                required
+                                                placeholder="Enter Your email"
+                                                value={this.state.email}
+                                                onChange={this.changeHandler}
+                                          />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Mobile Number*</label>
-                                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="223232323232" />
+                                          <label>Mobile Number*</label>
+                                          <input
+                                                type="text"
+                                                name="mobile"
+                                                required
+                                                placeholder="Enter Your Number"
+                                                value={this.state.mobile}
+                                                onChange={this.changeHandler}
+                                          />
                                     </div>
                                </Col>
-                               <Col md="6">
+                               {/* <Col md="6">
+                                       <label>Password*</label>
+                                        <input
+                                             type="password"
+                                             required
+                                             minLength={6}
+                                             maxLength={8}
+                                             name="password"
+                                             placeholder="Password"
+                                             value={this.state.password}
+                                             onChange={this.changeHandler}
+                                        />
+                               </Col> */}
+                               {/* <Col md="6">
+                                   <label>Confirm Password*</label>
+                                   <input
+                                        type="password"
+                                        name="cnfmPassword"
+                                        required
+                                        maxLength="8"
+                                        placeholder="Confrim Password"
+                                        value={this.state.cnfmPassword}
+                                        onChange={this.changeHandler}
+                                   />
+                               </Col> */}
+                               {/* <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Upload Image*</label>
-                                          <input type="file" class="form-control" id=""  />
+                                          <label>Upload Image*</label>
+                                          <input
+                                             type="file"
+                                             required
+                                             onChange={this.onChangeHandler}  
+                                        />
                                     </div>
-                               </Col>
+                               </Col> */}
                             </Row>
+                          <button class="btn btn-primary" onClick={() => this.stepper.next()}>Next</button>
+                        </div>
+                        <div id="test-otp" class="content">
+                               <Row>
+                               <Col md="6">
+                                    <div class="form-group mtb-10">
+                                          <label>Otp*</label>
+                                          <input
+                                                  type="text"
+                                                  required
+                                                  name="otp"
+                                                  value={this.state.otp}
+                                                  onChange={this.changeHandler}
+                                          />
+                                    </div>
+                               </Col>
+                              </Row>
                           <button class="btn btn-primary" onClick={() => this.stepper.next()}>Next</button>
                         </div>
                         <div id="test-l-2" class="content">
                                <Row>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Gender*</label>
-                                          <Select
-                                              value={selectedOption}
-                                              options={options}
+                                          <label>Gender*</label>
+                                          <select className="form-control" value={this.state.gender}
+                                                onChange={this.changeHandler} name="gender">
+                                               <option selected>--select--</option>
+                                               <option>Male</option>
+                                               <option>Female</option>
+                                          </select>
+                                    </div>
+                               </Col>
+                               <Col md="6">
+                                    <div class="form-group mtb-10">
+                                          <label>DOB*</label>
+                                          <input
+                                             type="date"
+                                             required
+                                             name="dob"
+                                             maxLength="8"
+                                             value={this.state.dob}
+                                             onChange={this.changeHandler}
+                                        />
+                                    </div>
+                               </Col>
+                               <Col md="6">
+                                    <div class="form-group mtb-10">
+                                          <label>Primary Skills*</label>
+                                            {/* <Select
+                                              isMulti
+                                              name="primary_skills"
+                                              required
+                                              className="basic-multi-select"
+                                              classNamePrefix="select"
+                                              onChange={this.changeHandler}
+                                            /> */}
+                                            <input 
+                                                placeholder="Primary Skills"
+                                                name="primary_skills"
+                                                type="text"
+                                                value={this.state.primary_skills}
+                                                onChange={this.changeHandler}
+                                            />
+                                            
+                                    </div>
+                               </Col>
+                               <Col md="6">
+                                    <div class="form-group mtb-10">
+                                          <label>All Skills*</label>
+                                            {/* <Select
+                                              isMulti
+                                              name="all_skills"
+                                              required
+                                              className="basic-multi-select"
+                                              classNamePrefix="select"
+                                              value={this.state.all_skills}
+                                              onChange={this.changeHandler}
+                                            /> */}
+                                             <input 
+                                                placeholder="All Skills"
+                                                name="all_skills"
+                                                type="text"
+                                                value={this.state.all_skills}
+                                                onChange={this.changeHandler}
+                                            />
+
+
+                                    </div>
+                               </Col>
+                               <Col md="6">
+                                    <div class="form-group mtb-10">
+                                          <label>Language*</label>
+                                            {/* <Select
+                                              isMulti
+                                              required
+                                              name="language"
+                                              className="basic-multi-select"
+                                              classNamePrefix="select"
+                                              onChange={this.changeHandler}
+                                              value={this.state.language}
+                                            /> */}
+                                            <input 
+                                                placeholder="language"
+                                                name="language"
+                                                type="text"
+                                                value={this.state.language}
+                                                onChange={this.changeHandler}
+                                            />
+                                    </div>
+                               </Col>
+                               <Col md="6">
+                                    <div class="form-group mtb-10">
+                                          <label>Experience in years*</label>
+                                          <input
+                                             type="text"
+                                             name="exp_in_years"
+                                             required
+                                             value={this.state.exp_in_years}
+                                             onChange={this.changeHandler}
+                                           />
+                                    </div>
+                               </Col>
+                               <Col md="6">
+                                    <div class="form-group mtb-10">
+                                          <label>How many hours you can contribute daily?*</label>
+                                          <input
+                                             type="text"
+                                             name="conrubute_hrs"
+                                             required
+                                             value={this.state.conrubute_hrs}
+                                             onChange={this.changeHandler}
+                                        />
+                                    </div>
+                               </Col>
+                               <Col md="6">
+                                    <div class="form-group mtb-10">
+                                          <label>Where did you hear about Astrotalk?*</label>
+                                          <input
+                                             type="text"
+                                             
+                                             name="hear_abt_astrology"
+                                             value={this.state.hear_abt_astrology}
+                                             onChange={this.changeHandler}
                                           />
-                                    </div>
-                               </Col>
-                               <Col md="6">
-                                    <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">DOB*</label>
-                                          <input type="date" class="form-control" id="" placeholder="" />
-                                    </div>
-                               </Col>
-                               <Col md="6">
-                                    <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Primary Skills*</label>
-                                            <Select
-                                              defaultValue={[colourptions[2], colourptions[3]]}
-                                              isMulti
-                                              name="colors"
-                                              options={colourptions}
-                                              className="basic-multi-select"
-                                              classNamePrefix="select"
-                                            />
-                                    </div>
-                               </Col>
-                               <Col md="6">
-                                    <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">All Skills*</label>
-                                            <Select
-                                              defaultValue={[colourptions[2], colourptions[3]]}
-                                              isMulti
-                                              name="colors"
-                                              options={colourptions}
-                                              className="basic-multi-select"
-                                              classNamePrefix="select"
-                                            />
-                                    </div>
-                               </Col>
-                               <Col md="6">
-                                    <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Language*</label>
-                                            <Select
-                                              defaultValue={[colourptions[2], colourptions[3]]}
-                                              isMulti
-                                              name="colors"
-                                              options={colourptions}
-                                              className="basic-multi-select"
-                                              classNamePrefix="select"
-                                            />
-                                    </div>
-                               </Col>
-                               <Col md="6">
-                                    <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Experience in years*</label>
-                                          <input type="text" class="form-control" id="" placeholder="1 yerars" />
-                                    </div>
-                               </Col>
-                               <Col md="6">
-                                    <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">How many hours you can contribute daily?*</label>
-                                          <input type="text" class="form-control" id="" placeholder="2 hour" />
-                                    </div>
-                               </Col>
-                               <Col md="6">
-                                    <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Where did you hear about Astrotalk?*</label>
-                                          <input type="text" class="form-control" id="" placeholder="Eg: Youtube, Facebook" />
                                     </div>
                                </Col>
                                <Col md="12">
@@ -203,14 +372,24 @@ class AstrologerSignup extends React.Component {
                                    <Row>
                                        <Col md="6">
                                            <div class="form-group mtb-10">
-                                              <label for="exampleInputEmail1">Name of platform</label>
-                                              <input type="text" class="form-control" id="" placeholder="Company Name" />
+                                            <label>Name of platform</label>
+                                             <input
+                                                  type="text"
+                                                  name="other_online_platform"
+                                                  value={this.state.other_online_platform }
+                                                  onChange={this.changeHandler}
+                                                />
                                             </div>
                                        </Col>
                                        <Col md="6">
                                            <div class="form-group mtb-10">
-                                              <label for="exampleInputEmail1">Monthly Earning</label>
-                                              <input type="text" class="form-control" id="" placeholder="Eg: 20,000" />
+                                              <label>Monthly Earning</label>
+                                              <input
+                                                  type="text"
+                                                  // name="max_earning_expe"
+                                                  // value={this.state.max_earning_expe}
+                                                  // onChange={this.changeHandler}
+                                                />
                                             </div>
                                        </Col>
                                    </Row>
@@ -224,120 +403,230 @@ class AstrologerSignup extends React.Component {
                             <Row>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Why do you think we should onboard you?*</label>
-                                          <input type="text" class="form-control" id="" placeholder="Why we should onboard you" />
-                                    </div>
-                               </Col>
-                               <Col md="6">
-                                    <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">What is a suitable time for interview*</label>
-                                          <input type="text" class="form-control" id="" placeholder="Suitable time for an interview" />
-                                    </div>
-                               </Col>
-                               <Col md="6">
-                                    <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Which city do you currently live in?</label>
-                                          <input type="text" class="form-control" id="" placeholder="City" />
-                                    </div>
-                               </Col>
-                               <Col md="6">
-                                    <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Main source of business (other than astrology)*</label>
-                                          <Select
-                                              value={selectedOption}
-                                              options={options}
+                                          <label>Why do you think we should onboard you?*</label>
+                                          <input
+                                                  type="text"
+                                                  required
+                                                  name="why_onboard_you"
+                                                  value={this.state.why_onboard_you}
+                                                  onChange={this.changeHandler}
                                           />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Select your highest qualification*</label>
-                                          <Select
-                                              value={selectedOption}
-                                              options={options}
+                                          <label>What is a suitable time for interview*</label>
+                                          <input
+                                                  type="text"
+                                                  required
+                                                  name="suitable_tym_interview"
+                                                  value={this.suitable_tym_interview }
+                                                  onChange={this.changeHandler}
+
                                           />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Degree/Diploma*</label>
-                                          <Select
-                                              value={selectedOption}
-                                              options={options}
+                                          <label>Which city do you currently live in?</label>
+                                          <input
+                                                  type="text"
+                                                  required
+                                                  name="crnt_city"
+                                                  value={this.crnt_city}
+                                                  onChange={this.changeHandler}
                                           />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">College/School/University*</label>
-                                          <input type="text" class="form-control" id="" placeholder="Enter your College/School/University name" />
+                                          <label>Main source of business (other than astrology)*</label>
+                                          {/* <Select
+                                              value={this.state.income_src}
+                                              required
+                                              onChange={this.changeHandler}
+                                          /> */}
+                                           <input 
+                                                placeholder="source of business"
+                                                name="income_src"
+                                                type="text"
+                                                value={this.state.income_src}
+                                                onChange={this.changeHandler}
+                                            />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">From where did you learn Astrology?</label>
-                                          <input type="text" class="form-control" id="" placeholder="Where did you learn an Astrology" />
+                                          <label>Select your highest qualification*</label>
+                                          {/* <Select
+                                              value={this.state.highest_qualification }
+                                              required
+                                              options={qualioption}
+                                              onChange={this.changeHandler}
+                                          /> */}
+                                           <input 
+                                                placeholder="qualification"
+                                                name="highest_qualification"
+                                                type="text"
+                                                value={this.state.highest_qualification}
+                                                onChange={this.changeHandler}
+                                            />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Instagram profile link</label>
-                                          <input type="text" class="form-control" id="" placeholder="Please let us know your Instagram profile" />
+                                          <label>Degree/Diploma*</label>
+                                          {/* <Select
+                                              value={this.state.degree_deploma}
+                                              required
+                                              onChange={this.changeHandler}
+                                          /> */}
+                                           <input 
+                                                placeholder="Degree/Diploma"
+                                                name="degree_deploma"
+                                                type="text"
+                                                value={this.state.degree_deploma}
+                                                onChange={this.changeHandler}
+                                            />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Facebook profile link</label>
-                                          <input type="text" class="form-control" id="" placeholder="Please let us know your Facebook profile" />
+                                          <label>College/School/University*</label>
+                                          <input
+                                                  type="text"
+                                                  name="clg_scl_name"
+                                                  required
+                                                  value={this.clg_scl_name}
+                                                  onChange={this.changeHandler}
+                                          />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">LinkedIn profile link</label>
-                                          <input type="text" class="form-control" id="" placeholder="Please let us know your LinkedIn profile" />
+                                          <label>From where did you learn Astrology?</label>
+                                          <input
+                                                  type="text"
+                                                  name="lrn_abt_astrology"
+                                                  required
+                                                  value={this.lrn_abt_astrology}
+                                                  onChange={this.changeHandler}
+                                          />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Youtube channel link</label>
-                                          <input type="text" class="form-control" id="" placeholder="Please let us know your Youtube channel" />
+                                          <label>Instagram profile link</label>
+                                          <input
+                                                  type="text"
+                                                  name="insta_link "
+                                                  required
+                                                  value={this.insta_link}
+                                                  onChange={this.changeHandler}
+                                          />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Name of the person who referred you?</label>
-                                          <input type="text" class="form-control" id="" placeholder="Enter name" />
+                                          <label>Facebook profile link</label>
+                                          <input
+                                                  type="text"
+                                                  name="fb_link"
+                                                  required
+                                                  value={this.fb_link}
+                                                  onChange={this.changeHandler}
+                                          />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Minimum Earning Expectation from AstroVipra*</label>
-                                          <input type="text" class="form-control" id="" placeholder="Minimum monthly earning expectation" />
+                                          <label>LinkedIn profile link</label>
+                                          <input
+                                                  type="text"
+                                                  name="linkedln_link"
+                                                  required
+                                                  value={this.linkedln_link}
+                                                  onChange={this.changeHandler}
+                                          />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Website profile link</label>
-                                          <input type="text" class="form-control" id="" placeholder="Enter your website url" />
+                                          <label>Youtube channel link</label>
+                                          <input
+                                                  type="text"
+                                                  name="youtube_link"
+                                                  required
+                                                  value={this.youtube_link}
+                                                  onChange={this.changeHandler}
+                                          />
                                     </div>
                                </Col>
                                <Col md="6">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Maximum Earning Expectation from AstroVipra*</label>
-                                          <input type="text" class="form-control" id="" placeholder="Maximum monthly earning expectation" />
+                                          <label>Name of the person who referred you?</label>
+                                          <input
+                                                  type="text"
+                                                  name="anybody_prefer"
+                                                  required
+                                                  value={this.anybody_prefer}
+                                                  onChange={this.changeHandler}
+                                          />
                                     </div>
                                </Col>
+                               <Col md="6">
+                                    <div class="form-group mtb-10">
+                                          <label>Minimum Earning Expectation from AstroVipra*</label>
+                                          <input
+                                                  type="text"
+                                                  name="min_earning_expe"
+                                                  required
+                                                  value={this.min_earning_expe}
+                                                  onChange={this.changeHandler}
+                                          />
+                                    </div>
+                               </Col>
+                               <Col md="6">
+                                    <div class="form-group mtb-10">
+                                          <label>Maximum Earning Expectation from AstroVipra*</label>
+                                          <input
+                                                  type="text"
+                                                  name="max_earning_expe"
+                                                  required
+                                                  value={this.max_earning_expe}
+                                                  onChange={this.changeHandler}
+                                          />
+                                    </div>
+                               </Col>
+                               <Col md="6">
+                                    <div class="form-group mtb-10">
+                                          <label>Website profile link</label>
+                                          <input
+                                                  type="text"
+                                                  name="max_earning_expe"
+                                                  required
+                                                  value={this.max_earning_expe}
+                                                  onChange={this.changeHandler}
+                                          />
+                                    </div>
+                               </Col>
+                               
                                <Col md="12">
                                     <div class="form-group mtb-10">
-                                          <label for="exampleInputEmail1">Long bio*</label>
-                                          <textarea type="text" class="form-control" id="" placeholder="Please let us know more about you" />
+                                          <label>Long bio*</label>
+                                          <textarea type="text" class="form-control"
+                                           name="long_bio"
+                                           required
+                                           value={this.long_bio}
+                                           onChange={this.changeHandler}
+                                           placeholder="Please let us know more about you" />
                                     </div>
                                </Col>
                               </Row>
                               <p className="ptb-10">
                                   You can reach out to us for Astrologer onboarding support team at onboarding@astrovipra.com in case of any issues or queries.
                               </p>
-                          <button type="submit" class="btn btn-primary mt-5">Submit</button>
+                          <Button type="submit" class="btn btn-primary mt-5">Submit</Button>
                         </div>
                       </form>
                     </div>

@@ -23,7 +23,8 @@ import FunFactOne from "../../wrappers/fun-fact/FunFactOne";
 import AboutUs from "../../components/astrology/aboutus";
 import FeatureIconSix from "../../wrappers/feature-icon/FeatureIconSix";
 import SectionPooja from "../../components/astrology/sectionpooja";
-import AstroTeam from "../../components/astrology/astroteam";
+// import AstroTeam from "../../components/astrology/astroteam";
+import SliderList from "../../components/astrology/sliderlist";
 
 
 const HomeFurnitureTwo = () => {
@@ -53,7 +54,8 @@ const HomeFurnitureTwo = () => {
 
       {/* <FirstSectiontree /> */}
       {/* <TeamMemberOne spaceTopClass="pt-95" spaceBottomClass="pb-70" /> */}
-      <AstroTeam/>
+      <SliderList/>
+
    
       <SectionPooja/>
       {/* third section */}

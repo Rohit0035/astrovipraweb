@@ -14,7 +14,7 @@ class SecondSection extends React.Component {
   componentDidMount() {
     //Store Image
     axios
-      .get("http://35.154.86.59/api/admin/browsebytrending_store")
+      .get("http://13.235.180.192/api/admin/browsebytrending_store")
       .then((response) => {
         console.log(response.data.data);
         this.setState({ storeL: response.data.data });

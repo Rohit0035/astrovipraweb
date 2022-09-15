@@ -9,6 +9,14 @@ const FeatureIconSixSingle = ({ data, spaceBottomClass, textAlignClass }) => {
           spaceBottomClass ? spaceBottomClass : ""
         } ${textAlignClass ? textAlignClass : ""}`}
       >
+         <div className="support-icon">
+          <img
+            className="animated img-secure"
+            src={process.env.PUBLIC_URL+data.image}
+            alt=""
+          />
+        </div>
+        
         <div className="support-content-5">
           <h5>{data.title}</h5>
           <p>{data.subtitle}</p>

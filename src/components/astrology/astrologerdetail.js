@@ -8,10 +8,27 @@ import Rating from "@mui/material/Rating";
 import LinearProgress from "@mui/material/LinearProgress";
 import Nav from "react-bootstrap/Nav";
 import detailsbg  from "../../assets/img/details-bg.jpg";
+import {  Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 
 class AstrologerDetail extends React.Component {
  
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false,
+    
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+
   
 
   render() {
@@ -21,25 +38,34 @@ class AstrologerDetail extends React.Component {
 
     
     <LayoutOne headerTop="visible">
+
+       <section className="pt-0 pb-0" >
+                <div
+                    className=""
+                    style={{
+                      backgroundColor:"#FFD59E",
+                      width: "100%",
+                      padding:"70px 0px",
+                      backgroundSize:"cover"
+                    }}
+                  >
+                    <Container>
+                            <Row>
+                                <Col md="12">
+                                    <div className="leftcont text-left">
+                                        <h1>Astrologer Detail</h1>
+                                        <p></p>
+                                    </div>
+                                </Col>
+                                
+                            </Row>
+                    </Container>
+                    
+                </div>
+        </section>
     <div className="col-lg-12 col-md-12 mb-30">
       <div className="category-home">
       <section className="pt-0">
-      <div
-          className="d-flex justify-content-center align-items-center"
-          style={{
-            backgroundImage: `url(${detailsbg})`,
-            width: "100%",
-            padding:"50px 0px",
-            backgroundSize:"cover"
-          }}
-        >
-        <h3
-         style={{
-            color:"#fff"
-          }}
-        > Profile</h3>
-      </div>
-
       <Container>
           <section className="dt-astro">
                <Row>
@@ -67,10 +93,15 @@ class AstrologerDetail extends React.Component {
                        </div>
                     </Col>
                     <Col md="3" className="mt-30">
-                         <Button className="btn-as st">Call Now
+                         <Button className="btn-as st" onClick={this.toggle} >Call Now
                             <small className="sm-text">
-							<i class="fa fa-inr" aria-hidden="true"></i> 30/Min 
-							</small>
+                               <i class="fa fa-inr" aria-hidden="true"></i> 30/Min 
+						                </small>
+                         </Button>
+                         <Button className="btn-as st" onClick={this.toggle} >Chat Now
+                            <small className="sm-text">
+							                 <i class="fa fa-inr" aria-hidden="true"></i> 30/Min 
+                            </small>
                          </Button>
                     </Col>
                </Row>
@@ -269,9 +300,36 @@ class AstrologerDetail extends React.Component {
         </div>
           </section>
       </Container>
-    </section>
+      </section>
     </div>
     </div>
+
+
+    {/* modal for recharge*/}
+
+          <Modal size="md" style={{maxWidth: '600px', width: '100%'}} isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                <ModalHeader className="wr-3" toggle={this.toggle}>
+                    <h2 className="wr-4">Recharge Now</h2>
+                </ModalHeader>
+                <ModalBody>
+                          <div className="Wr-1">
+                              <h3>
+                                  Minimum balance of 5 minutes (INR 25.0) is required to start call with RajnishM
+                              </h3>
+                              <Link className="wr-5">
+                                    <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                              </Link>
+                              <Link className="wr-6" to="/walletmoney">
+                                   <Button>Recharge</Button>
+                              </Link>
+                          </div>
+                </ModalBody>
+                <ModalFooter>
+                  {/* <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '} */}
+                  {/* <Button color="secondary" onClick={this.toggle}>Cancel</Button> */}
+                </ModalFooter>
+        </Modal>
+
    </LayoutOne>
   );
   }

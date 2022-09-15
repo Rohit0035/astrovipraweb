@@ -6,19 +6,18 @@ import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
-import { Form } from "reactstrap";
+import { Container, Form, Row,Col } from "reactstrap";
 import axios from "axios";
-
+import userpic from "../../assets/img/userpic.png"
 export default class MyAccount extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      firstname: "",
-      lastname: "",
-      //email: "",
-      //mobile: "",
-
+      fullname : "",
+      email: "",
+      mobile: "",
+      userimg:"",
       address: "",
       locality: "",
       pincode: "",
@@ -27,9 +26,15 @@ export default class MyAccount extends Component {
     };
   }
 
+
+ 
+
+
   componentDidMount() {
+    let { id } = this.props.match.params;
+    console.log(this.state);
     axios
-      .get("http://35.154.86.59/api/user/getonecustomer", {
+      .get(`http://13.235.180.192/user/viewoneuser/${id}`, {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
         },
@@ -39,9 +44,9 @@ export default class MyAccount extends Component {
 
         this.setState({
           firstname: response.data.data.firstname,
-          lastname: response.data.data.lastname,
-          email: response.data.data.email,
-          mobile: response.data.data.mobile,
+          // lastname: response.data.data.lastname,
+          // email: response.data.data.email,
+          // mobile: response.data.data.mobile,
         });
         // this.state
         console.log(this.state);
@@ -51,7 +56,7 @@ export default class MyAccount extends Component {
       });
 
     axios
-      .get("http://35.154.86.59/api/user/viewoneuseraddress", {
+      .get("http://13.235.180.192/api/user/viewoneuseraddress", {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
         },
@@ -60,6 +65,7 @@ export default class MyAccount extends Component {
         console.log(response);
 
         this.setState({
+          // fullname:response.data.data.fullname,
           address: response.data.data.address,
           locality: response.data.data.locality,
           pincode: response.data.data.pincode,
@@ -77,7 +83,7 @@ export default class MyAccount extends Component {
     e.preventDefault();
     //let { id } = this.props.match.params;
     axios
-      .post(`http://35.154.86.59/api/user/editcustomer`, this.state, {
+      .post(`http://13.235.180.192/api/user/editcustomer`, this.state, {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
         },
@@ -94,7 +100,7 @@ export default class MyAccount extends Component {
     e.preventDefault();
     console.log(this.state);
     axios
-      .post("http://35.154.86.59/api/user/addcus_address", this.state, {
+      .post("http://13.235.180.192/api/user/addcus_address", this.state, {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
         },
@@ -114,26 +120,68 @@ export default class MyAccount extends Component {
   render() {
     return (
       <Fragment>
-        <MetaTags>
+        {/* <MetaTags>
           <title>Flone | My Account</title>
           <meta
             name="description"
             content="Compare page of flone react minimalist eCommerce template."
           />
-        </MetaTags>
-        <BreadcrumbsItem to={process.env.PUBLIC_URL + "/"}>
-          Home
-        </BreadcrumbsItem>
+        </MetaTags> */}
+        {/* <BreadcrumbsItem to={process.env.PUBLIC_URL + "/"}>
+          Home / My Account
+        </BreadcrumbsItem> */}
         {/* <BreadcrumbsItem to={process.env.PUBLIC_URL + pathname}>
         My Account
       </BreadcrumbsItem> */}
         <LayoutOne headerTop="visible">
           {/* breadcrumb */}
-          <Breadcrumb />
+          {/* <Breadcrumb /> */}
+
+          <section className="pt-0 pb-0" >
+                 <div
+                    className=""
+                    style={{
+                      backgroundColor:"#FFD59E",
+                      width: "100%",
+                      padding:"70px 0px",
+                      backgroundSize:"cover"
+                    }}
+                  >
+                    <Container>
+                            <Row>
+                                <Col md="12">
+                                    <div className="leftcont text-left">
+                                        <h1>My Account Information</h1>
+                                    </div>
+                                </Col>
+                                
+                            </Row>
+                    </Container>
+                    
+                </div>
+        </section>
           <div className="myaccount-area pb-80 pt-100">
             <div className="container">
-              <div className="row d-flex justify-content-center align-items-center">
-                <div className="ml-auto mr-auto col-lg-9">
+              <div className="row">
+                <div class="col-lg-4">
+                    <Card.Body className="usr-1">
+                         <div className="user-pro">
+                             <img src={userpic} alt=""/>
+                             <ul>
+                                  <li>Name :    <span>{this.state.fullname}</span></li>
+                                  <li>Mobile :    <span>4454544545</span></li>
+                                  <li>Email :    <span>Test@gmail.com</span></li>
+                                  <li>DOB :    <span>02/02/2022</span></li>
+                                  <li>State :    <span>MP</span></li>
+                                  <li>City :    <span>Indore</span></li>
+                                  <li>Address :    <span>Vijay Nagar</span></li>
+                                  <li>Locality :    <span>Indore</span></li>
+                                  <li>Pin Code :    <span>452001</span></li>
+                             </ul>
+                         </div>
+                    </Card.Body>
+                </div>
+                <div className="col-lg-8">
                   <div className="myaccount-wrapper">
                     {/* <Accordion defaultActiveKey="0"> */}
                     <Card className="single-my-account mb-20">
@@ -145,7 +193,7 @@ export default class MyAccount extends Component {
                           </Accordion.Toggle> */}
                       </Card.Header>
                       {/* <Accordion.Collapse eventKey="0"> */}
-                      <Card.Body>
+                      <Card.Body className="usr-1">
                         <Form onSubmit={this.submitHandler}>
                           <div className="myaccount-info-wrapper">
                             <div className="account-info-wrapper">
@@ -213,7 +261,7 @@ export default class MyAccount extends Component {
                       {/* </Accordion.Collapse> */}
                     </Card>
                     <Card className="single-my-account mb-20">
-                      <Card.Body>
+                      <Card.Body  className="usr-1">
                         <Form onSubmit={this.addAddress}>
                           <div className="myaccount-info-wrapper">
                             <div className="account-info-wrapper">
@@ -292,7 +340,7 @@ export default class MyAccount extends Component {
                       {/* </Accordion.Collapse> */}
                     </Card>
                     <Card className="single-my-account mb-20">
-                      <Card.Body>
+                      <Card.Body  className="usr-1">
                         <Form onSubmit={this.addAddress}>
                           <div className="myaccount-info-wrapper">
                             <div className="account-info-wrapper">

@@ -122,8 +122,17 @@ const LoginRegister = lazy(() => import("./pages/other/LoginRegister"));
 const Step = lazy(() => import("./pages/other/Step"));
 const Phone = lazy(() => import("./pages/other/Phone"));
 const Otp = lazy(() => import("./pages/other/Otp"));
+const OtpVerify = lazy(() => import("./components/astrology/astrologerpages/OtpVerify"));
+const RegisterAstro = lazy(() => import("./components/astrology/astrologerpages/RegisterAstro"));
+const CompleteProAstro = lazy(() => import("./components/astrology/astrologerpages/CompleteProAstro"));
+
+
 
 // astology pages start
+const AlertPage = lazy(() => import("./components/astrology/AlertPage"));
+
+const FreeKundli = lazy(() => import("./components/astrology/kundalimatch/freekundli"));
+
 const bannerSection = lazy(() => import("./components/astrology/bannerSection"));
 const TeamMemberOne = lazy(() => import("././wrappers/team-member/TeamMemberOne"));
 const HomeCategory = lazy(() => import("./components/astrology/homecategory"));
@@ -136,6 +145,24 @@ const AstrologerSignup = lazy(() => import("./components/astrology/astrologersig
 const AstrologerLogin = lazy(() => import("./components/astrology/astrologerlogin"));
 const AstroTeam = lazy(() => import("./components/astrology/astroteam"));
 const SectionPooja = lazy(() => import("./components/astrology/sectionpooja"));
+const ProfileDetail = lazy(() => import("./components/astrology/profiledetail"));
+const PoojaDetail = lazy(() => import("./components/astrology/poojadetail"));
+const HeroscopesAll = lazy(() => import("./components/astrology/heroscopesall"));
+const HeroscopesTwo = lazy(() => import("./components/astrology/heroscopestwo"));
+const AstromallList = lazy(() => import("./components/astrology/astromallList"));
+const OurService = lazy(() => import("./components/astrology/OurService"));
+const AllAstrologerList = lazy(() => import("./components/astrology/allastrologerlist"));
+const AutoSearch = lazy(() => import("./components/astrology/autosearch"));
+const SliderDemo = lazy(() => import("./components/astrology/sliderdemo"));
+const SliderList = lazy(() => import("./components/astrology/sliderlist"));
+const ChatList = lazy(() => import("./components/chat/chatlist"));
+const KundaliForm = lazy(() => import("./components/astrology/kundalimatch/kundaliform"));
+const KundaliMatchList = lazy(() => import("./components/astrology/kundalimatch/kundalimatchlist"));
+const WalletMoney = lazy(() => import("./components/astrology/WalletMoney"));
+const WalletTransacList = lazy(() => import("./components/astrology/WalletTransacList"));
+const NotificationList = lazy(() => import("./components/astrology/NotificationList"));
+const WalletAddForm = lazy(() => import("./components/astrology/WalletAddForm"));
+
 
 const Cart = lazy(() => import("./pages/other/Cart"));
 const MyOrder = lazy(() => import("./pages/other/MyOrder"));
@@ -454,6 +481,31 @@ const App = (props) => {
                   path={process.env.PUBLIC_URL + "/bannerSection"}
                   component={bannerSection}
                 />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/notificationlist"}
+                  component={NotificationList}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/wallettransaclist"}
+                  component={WalletTransacList}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/walletaddform"}
+                  component={WalletAddForm}
+                />
+
+<               Route
+                  path={process.env.PUBLIC_URL + "/walletmoney"}
+                  component={WalletMoney}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/profiledetail"}
+                  component={ProfileDetail}
+                />
                  
                  <Route
                   path={process.env.PUBLIC_URL + "/TeamMemberOne"}
@@ -485,6 +537,11 @@ const App = (props) => {
                   path={process.env.PUBLIC_URL + "/astroteam"}
                   component={AstroTeam}
                 />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/freekundli"}
+                  component={FreeKundli}
+                />
                 <Route
                   path={process.env.PUBLIC_URL + "/sectionpooja"}
                   component={SectionPooja}
@@ -499,9 +556,72 @@ const App = (props) => {
                   path={process.env.PUBLIC_URL + "/aboutdetail"}
                   component={AboutDetail}
                 />
+                
                 <Route
                   path={process.env.PUBLIC_URL + "/faq"}
                   component={FAQ}
+                />
+                  
+                <Route
+                  path={process.env.PUBLIC_URL + "/poojadetail"}
+                  component={PoojaDetail}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/heroscopesall"}
+                  component={HeroscopesAll}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/heroscopestwo"}
+                  component={HeroscopesTwo}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/astromallList"}
+                  component={AstromallList}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/alertpage"}
+                  component={AlertPage}
+                />
+
+                
+                <Route
+                  path={process.env.PUBLIC_URL + "/ourservice"}
+                  component={OurService}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/allastrologerlist"}
+                  component={AllAstrologerList}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/autosearch"}
+                  component={AutoSearch}
+                />
+                 <Route
+                  path={process.env.PUBLIC_URL + "/sliderdemo"}
+                  component={SliderDemo}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/sliderlist"}
+                  component={SliderList}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/chatlist"}
+                  component={ChatList}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/kundaliform"}
+                  component={KundaliForm}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/kundalimatchlist"}
+                  component={KundaliMatchList}
                 />
 
 
@@ -531,6 +651,22 @@ const App = (props) => {
                   path={process.env.PUBLIC_URL + "/login-register"}
                   component={LoginRegister}
                 />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/otpverify"}
+                  component={OtpVerify}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/registerastro"}
+                  component={RegisterAstro}
+                />  
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/completeproastro"}
+                  component={CompleteProAstro}
+                />                     
+              
                 <Route
                   path={process.env.PUBLIC_URL + "/step"}
                   component={Step}

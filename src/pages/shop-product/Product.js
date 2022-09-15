@@ -23,7 +23,7 @@ export class Product extends Component {
   componentDidMount() {
     let { id } = this.props.match.params;
     axios
-      .get(`http://35.154.86.59/api/admin/getoneproduct/${id}`)
+      .get(`http://13.235.180.192/api/admin/getoneproduct/${id}`)
       .then(response => {
         console.log(response.data.data);
         this.setState({ detail: response.data.data });

@@ -24,7 +24,7 @@ class SectionPooja extends React.Component {
                 <Col md="3">
                     <div className="product-grid8">
                         <div class="product-image8">
-                            <Link>
+                            <Link to="/poojadetail">
                             <img src={astro2} alt=""/>
                             </Link>
                             <ul class="social">
@@ -48,7 +48,7 @@ class SectionPooja extends React.Component {
                 <Col md="3">
                     <div className="product-grid8">
                         <div class="product-image8">
-                            <Link>
+                            <Link to="/poojadetail">
                             <img src={astro2} alt=""/>
                             </Link>
                             <ul class="social">
@@ -72,7 +72,7 @@ class SectionPooja extends React.Component {
                 <Col md="3">
                     <div className="product-grid8">
                         <div class="product-image8">
-                            <Link>
+                            <Link to="/poojadetail">
                             <img src={astro2} alt=""/>
                             </Link>
                             <ul class="social">
@@ -96,7 +96,7 @@ class SectionPooja extends React.Component {
                 <Col md="3">
                     <div className="product-grid8">
                         <div class="product-image8">
-                            <Link>
+                            <Link to="/poojadetail">
                             <img src={astro2} alt=""/>
                             </Link>
                             <ul class="social">

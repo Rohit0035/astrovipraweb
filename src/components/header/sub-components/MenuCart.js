@@ -17,7 +17,7 @@ const MenuCart = ({ cartData, currency, deleteFromCart }) => {
 
     try {
       const response = await Axios.get(
-        `http://35.154.86.59/api/admin/remove_cart/${id}`,
+        `http://13.235.180.192/api/admin/remove_cart/${id}`,
         {
           headers: {
             "auth-token": localStorage.getItem("auth-token"),
@@ -34,7 +34,7 @@ const MenuCart = ({ cartData, currency, deleteFromCart }) => {
   };
   const fetchcarts = async (token) => {
     const { data } = await Axios.get(
-      `http://35.154.86.59/api/admin/cartbycustomer`,
+      `http://13.235.180.192/api/admin/cartbycustomer`,
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),

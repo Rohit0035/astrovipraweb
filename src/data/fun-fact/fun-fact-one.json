@@ -1,19 +1,19 @@
 [
   {
     "id": "1",
-    "iconClass": "pe-7s-add-user",
+    "image": "/assets/img/icon-img/stclient.png",
     "countNum": 1300,
     "title": "Satisfied Clients"
   },
   {
     "id": "2",
-    "iconClass": "pe-7s-add-user",
+    "image": "/assets/img/icon-img/stastro.png",
     "countNum": 20,
     "title": "Astrologers"
   },
   {
     "id": "3",
-    "iconClass": "pe-7s-add-user",
+    "image": "/assets/img/icon-img/stusers.png",
     "countNum": 4000,
     "title": "Registered Users"
   }

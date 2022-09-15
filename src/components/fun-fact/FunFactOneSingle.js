@@ -19,7 +19,12 @@ const FunFactOneSingle = ({ data, spaceBottomClass, textAlignClass }) => {
         }`}
       >
         <div className="count-icon">
-          <i className={data.iconClass} />
+          {/* <i className={data.iconClass} /> */}
+          <img
+            className="animated img-secure"
+            src={process.env.PUBLIC_URL+data.image}
+            alt=""
+          />
         </div>
         <h2 className="count">
           <VisibilitySensor

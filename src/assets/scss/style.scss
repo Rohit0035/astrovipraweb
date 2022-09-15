@@ -40,7 +40,17 @@
 // astroteam
 @import "../scss//astroteam.scss";
 
+
+
+
 // rohit css 
+
+h1, .h1 {
+    font-size: 25px;
+    line-height: 42px;
+    font-weight: 700;
+}
+
 @keyframes spin {
     from {
         transform:rotate(0deg);
@@ -92,7 +102,7 @@ a.st-6 {
     width: 100px;
     margin-bottom: 14px;
     height: 100px;
-    background: #ff6f00;
+    background: #FFD59E;
     font-size: 40px;
     color: #fff;
     font-weight: bold;
@@ -115,8 +125,9 @@ a.st-6 {
 
 // logotext
 h3.stltext {
-    color: #ff6f00;
+    color: #FFD59E;
     font-weight: 700;
+    font-size: 22px;
 }
 
 // home category css
@@ -159,7 +170,7 @@ section.stt-1 {
 }
 
 .bx-1:hover{
-    background:  #ff6f00 ;
+    background:  #FFD59E ;
    
     h5{
         color: #fff;
@@ -212,7 +223,7 @@ small.sm-text {
 }
 
 .statusonline2 span{
-    background: #ff6f00;
+    background: #FFD59E;
     padding: 6px 12px;
     color: #fff;
     border-radius: 100px;
@@ -229,7 +240,7 @@ small.sm-text {
     margin-top: 80px;
 }
 .slider-btn-brown a {   
-    background-color: #ff6f00 !important;
+    background-color: #FFD59E !important;
 }
 .product-tab-list {
     justify-content: left;
@@ -241,7 +252,7 @@ h3.s-tt {
     margin-top: 10px
 }
 .product-tab-list a.active h4, .product-tab-list a.active .h4 {
-    color: #ff6f00;
+    color: #FFD59E;
 }
 .tab-st {
     background: #cccccc1a;
@@ -264,10 +275,12 @@ p.ptext {
     padding: 20px 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     h2{
-        color:#ff6f00;
+        color:#FFD59E;
+        font-weight: 700;
     }
     p{
-        color:#000;
+        color:#fff;
+        font-weight: bold;
     }
 
 }
@@ -285,7 +298,10 @@ section.dt-astro{
     margin-top: 37px;
 }
 .ab-img {
-    width: 400px;
+    width:100%;
+}
+.about-img {
+    width:400px;
 }
 .abo-1 {
     padding-top: 150px;
@@ -311,15 +327,15 @@ section.dt-astro{
     border-radius: 20px;
 }
 .active .bs-stepper-circle {
-    background-color: #ff6f00 !important;
+    background-color: #FFD59E !important;
 }
 .btn-primary {
     color: #fff;
-    background-color: #ff6f00 !important;
-    border-color: #ff6f00 !important;
+    background-color: FFD59E !important;
+    border-color: #FFD59E !important;
 }
 .bs-stepper-label {
-    color: #ff6f00 !important ;
+    color: #FFD59E !important ;
 }
 .astro-login {
     width: 50%;
@@ -358,4 +374,650 @@ button.ntb {
 }
 label {
     font-size: 12px;
+}
+
+.scroll-top {
+    background-color: #fc6e00 !important;
+}
+
+// animation css
+
+@keyframes wiggleq {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+  
+  .bx-1 img{
+    animation: wiggleq 3s linear infinite;
+  }
+
+  .bst-stro h3 i{
+    animation: wiggleq 5s linear infinite;
+  }
+
+//   footer
+.footer-area {
+    background-color: #120d13;
+}
+
+// header name css
+span.username {
+    font-size: 16px;
+    margin-left: 6px;
+    font-weight: 500;
+}
+a{
+    text-decoration:none!important;
+}
+
+
+// heroscopes page
+.leftcont.text-left{
+
+ h2 {
+    font-size: 30px;
+    font-weight: 600;
+   }
+p {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 30px;
+   }
+}
+
+.scope-img {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 15px;
+    padding: 10px;
+    background: #ffd59e;
+    border-radius: 8px;
+    img{
+        width: 80px;
+    }
+  
+}
+.scope-text{
+    p{
+        margin-bottom: 0px;
+    }
+}
+.scope-1 {
+    padding: 60px 0px;
+}
+.scope-detail.scop-2 {
+    padding: 15px;
+    background: #edebeb38;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    height:200px;
+}
+span.scope-sp {
+    text-align: right;
+    width: 100%;
+    float: right;
+    color: #000;
+}
+.scope-detail:hover{
+    a {
+        color:rgb(235, 140, 140);
+    }       
+}
+
+.st-search {
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+// astro mall css
+.po-box {
+    padding: 15px;
+    background: #cccccc14;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    h3{
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 0px;
+    }
+    p{
+        font-size: 13px;
+        font-weight: 200;
+        line-height: 18px;
+    }
+    img{
+        border-radius: 5px;
+    }
+}
+
+// kundali match css start
+
+.match-bx {
+    padding: 20px;
+    .form-m{
+        padding: 25px 29px;
+        background: #ffff;
+        border-radius: 8px;
+        
+      }
+      label{
+        margin-top: 20px;
+      }
+     h3{
+        margin: 20px 0px;
+      }
+     
+}
+.mb-50.pt-d.card {
+    border: none;
+    background: #ffd59e4a;
+}
+
+
+// kundali matching css
+
+.mat-box{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    padding: 10px;
+    border: 3px solid#ffd59e;
+  h3{
+    padding: 12px 10px;
+    border-radius: 4px;
+    background: #ffd59e;
+    font-size: 22px;
+    font-weight: 500;
+  }
+}
+.mat-main {
+    padding: 25px 20px;
+    background: #cccccc1f;
+    border-radius: 7px;
+    h3{
+        margin-bottom: 15px;
+    }
+}
+
+.matbox{
+    width: 100%;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+
+}
+.matbox-1{
+    padding: -5px;
+    width: 90px;
+    height: 90px;
+    float: left;
+    padding: 16px;
+    text-align: center;
+    margin-right: 15px;
+    background: #ffd59e;
+    border-radius: 5px;
+    h2{
+        margin-top: 10px;
+    }
+
+}
+.matbox-2{
+    width: 80%;
+    height: 80%;
+    display: inline-block;
+
+}
+.bx-conclusion{
+    padding: 50px  0px;
+    h3{
+        font-size: 20px;
+    }  
+}
+h2.mb-20.mat {
+    border-bottom: 1px solid #fc6e0036;
+    padding-bottom: 8px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.matbox-1.mg {
+    padding: 0px;
+}
+span.sp-mat {
+    font-weight: 700;
+    margin-left: 15px;
+    font-size: 16px;
+}
+.foot-icon {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+// modal wallet recharge
+.Wr-1 {
+    text-align: center;
+    h3{
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    a{
+        margin: 0px 10px;
+        display: inline-block;
+        margin-top: 15px;
+    }
+ 
+}
+.wr-3.modal-header {
+    padding: 10px;
+    background: #ffd59e;
+}
+h2.wr-4 {
+    margin-top: 7px;
+    font-weight: 600;
+    font-size: 22px;
+}
+a.wr-5 button {
+    background: #e21e1e;
+    width: 100px;
+    border-color: #e21e1e;
+}
+a.wr-6 button {
+    background: #4caf50;
+    border-color: #4caf50;
+}
+.w-offer button i {
+    margin: 10px;
+}
+.w-offer button {
+    background: #4caf50;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+.Wr-1.wr-t {
+    text-align: left;
+}
+.Wr-1.wr-t button{
+    margin-top: 20px;
+}
+a.Tansdel i {
+    color: #d63907;
+    font-size: 25px;
+}
+
+// user profile css
+
+.user-pro{
+
+    padding: 49px 15px;
+
+    img{
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        margin: 0 80px;
+    }
+    ul{
+        margin-top: 40px;
+    }
+    ul li {
+    line-height: 38px;
+    font-size: 15px;
+    font-weight: 500;
+    }
+    ul li span {
+        float: right;
+    }
+}
+.usr-1.card-body {
+    background: #eae7e242;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    border-radius: 10px;
+}
+
+// notification css
+.noteify-list{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    background: #cccccc63;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    border-radius: 10px;
+ }
+.noteifybx {
+    width: 100px;
+    height: 100px;
+    float: left;
+    padding: 12px;
+    
+}
+.notes-box {
+    width: 80%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.noteifybxx{
+    h2{
+        font-size: 22px;
+        font-weight: 400;
+    }
+}
+
+.notify-sp {
+    float: right;
+    margin-top: -50px;
+    width: 40px;
+    border-radius: 100%;
+    height: 40px;
+    background: #fff;
+    text-align: center;
+}
+.notify-sp i{
+    font-size: 22px;
+    margin-top: 8px;
+    color: #d63907;
+}
+img.animated.img-secure {
+    width: 60px;
+}
+
+// css for service
+.serve-2{
+    padding: 80px 0px;
+    position: relative;
+}
+.serve-2:after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    width: 207px;
+    height: 600px;
+    background-image: url('../img/heroscope/service_shape.png');
+    bottom: 80px;
+}
+img.imgser1 {
+    -webkit-animation: spin 12s infinite linear;
+    width: 100%;
+}
+img.imgser2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 150px;
+}
+.serve-1{
+    background-color:#fff;
+    text-align: center;
+    padding: 50px 22px 50px;
+    margin-top: 30px;
+    box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 6%);
+    position: relative;
+    min-height: 322px;
+    border-radius: 10px;
+    z-index: 1;
+    transition: all 0.3s linear;
+   h3{
+       font-size: 22px;
+       font-weight: bold;
+       margin-bottom: 15px;
+       margin-top: 20px;
+    }
+    p{
+       font-size: 14px;
+       font-weight: 400;
+    }
+    a{
+        font-size: 16px;
+        font-weight: 500;
+        border-bottom: 1px solid#ff8f06;
+        color: #ff8f06;
+        width: fit-content;
+    }
+}
+.serve-1:after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -135px 0 0 -135px;
+    background-image: url('../img/heroscope/service-circle.png');
+    width: 271px;
+    height: 270px;
+    animation: spin 9s infinite linear;
+    -webkit-animation: spin 9s infinite linear;
+    -moz-animation: spin 9s infinite linear;
+    z-index: -1;
+}
+.serve-1 {
+    overflow: hidden;
+}
+.serve-1:hover{
+    background-color: #ff8f06b2;
+    p{
+        color: #fff;
+
+    }
+    h3{
+        color: #fff;
+    }
+    a{
+        border-bottom: 1px solid#fff;
+        color: #fff;
+    }
+}
+
+// modal popup css
+
+.modal.show .modal-dialog {
+    transform: none;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+button.close.md-close {
+    background: #fff;
+    color: #000 !important;
+    font-size: 26px;
+    border-radius: 4px;
+}
+.modal-header.md-h {
+    background: #ff9800;
+    padding: 10px 18px;
+    h2{
+        color: #fff;
+    }
+}
+.modal-body{
+    h3{
+        font-size: 22px;
+        font-weight: 500;
+    }
+}
+img.mdl-img {
+    width: 250px;
+    float: right;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+.md-left ul li {
+    /* line-height: 25px; */
+    padding-bottom: 15px;
+    font-size: 14px;
+}
+.md-left {
+    margin-top: 15px;
+}
+i.fa-hand-o-right.md-i {
+    font-size: 18px;
+    color: #ff9006;
+    margin-right: 10px;
+}
+
+// rohit css
+.st-tab {
+    padding: 20px 0px;
+}
+.st-tab ul li {
+    display: inline-block;
+    width: 89px;
+    margin: 4px;
+    background: #ff9800;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+}
+
+.st-tab ul li a{
+    color: #fff;
+    font-weight: 700;
+}
+
+// alertpage css 
+.wrap-1{
+    width:100%;
+    height:100vh;
+    display: flex;
+  flex-direction: column;
+  }
+  .wrap-2{
+    text-align: center;
+    background-color: #f5f2ed78;
+    box-shadow: 10px 10px;
+    padding: 60px 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+
+    h1{
+        font-size: 72px;
+        letter-spacing: 3px;
+        font-weight: 600;
+        color: #ff9800;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    p{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 35px !important;
+    line-height: 35px;
+    }
+  }
+ 
+.animate-charcter{
+ text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+  .go-home{
+    font-weight: 500;
+    color: #fff;
+    background: #ff9800;
+    border: none;
+    padding: 10px 50px;
+    margin: 30px 0;
+    border-radius: 30px;
+    text-transform: capitalize;
+    // box-shadow: 0 10px 16px 1px #2a2826;
+    margin-right: 15px;
+  }
+  .footer-like{
+    margin-top: auto; 
+    background:#D7E6FE;
+    padding:6px;
+    text-align:center;
+  }
+  .footer-like p{
+    margin:0;
+    padding:4px;
+    color:#5892FF;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing:1px;
+  }
+  .footer-like p a{
+    text-decoration:none;
+    color:#5892FF;
+    font-weight:600;
+  }
+  
+  @media (min-width:360px){
+    // h1{
+    //   font-size:4.5em;
+    // }
+    .go-home{
+      margin-bottom:20px;
+    }
+  }
+  
+  @media (min-width:600px){
+    .content {
+    max-width:1000px;
+    margin:0 auto;
+     }
+.wrap-1{
+    height: initial;
+    max-width:620px;
+    margin:0 auto;
+    margin-top:50px;
+    box-shadow: 4px 8px 40px 8px rgba(88, 146, 255, 0.2);
+    }
+    
+  }
+
+.wal-amt{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    border-radius: 10px;
+    h3{
+        margin-bottom: 30px;
+        margin-top: 14px;
+    }
 }

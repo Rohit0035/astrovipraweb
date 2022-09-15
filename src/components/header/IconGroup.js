@@ -18,6 +18,14 @@ const IconGroup = ({
     e.currentTarget.nextSibling.classList.toggle("active");
   };
 
+  const handleLogout = (e) => {
+    window.localStorage.clear()
+    // window.location.reload()
+     window.location.replace("/");
+    //  window.location.replace("http://soxypay.com/");
+
+  };
+
   const triggerMobileMenu = () => {
     const offcanvasMobileMenu = document.querySelector(
       "#offcanvas-mobile-menu"
@@ -29,7 +37,7 @@ const IconGroup = ({
   //const { id } = useParams();
   const fetchcarts = async (token) => {
     const { data } = await Axios.get(
-      `http://35.154.86.59/api/admin/cartbycustomer`,
+      `http://13.235.180.192/api/admin/cartbycustomer`,
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
@@ -50,7 +58,7 @@ const IconGroup = ({
   const [wish, setWish] = useState([]);
   const fetchWish = async () => {
     const { data } = await Axios.get(
-      "http://35.154.86.59/api/admin/getallwishlist",
+      "http://13.235.180.192/api/admin/getallwishlist",
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
@@ -66,6 +74,32 @@ const IconGroup = ({
       fetchWish();
     }
   }, []);
+
+
+  // account
+const [customer, setCustomer] = useState([]);
+const fetchCustomer = async () => {
+  const { data } = await Axios.get(
+    "http://15.207.86.15:8000/user/viewoneuser/62ee1dbe9b502d1ab4f5e131",
+    {
+      headers: {
+        "auth-token": localStorage.getItem("auth-token"),
+      },
+    }
+  );
+
+  
+  
+  
+  const customer = data.data;
+  setCustomer(customer);
+  console.log(customer);
+};
+useEffect(() => {
+  if (localStorage.getItem("auth-token")) {
+    fetchCustomer();
+  }
+}, []);
 
   return (
     <div
@@ -90,6 +124,7 @@ const IconGroup = ({
           onClick={(e) => handleClick(e)}
         >
           <i className="pe-7s-user-female" />
+          <span className="username">{customer?.fullname}</span>
         </button>
         <div className="account-dropdown">
           <ul>
@@ -111,7 +146,7 @@ const IconGroup = ({
                   </Link>
                 </li>
                 <li>
-                  <Link to={process.env.PUBLIC_URL + "/astrologersignup"}>
+                  <Link to={process.env.PUBLIC_URL + "/registerastro"}>
                     Astrologer Register
                   </Link>
                 </li>
@@ -122,15 +157,34 @@ const IconGroup = ({
                   <Link to={process.env.PUBLIC_URL + "/myOrder"}>My Order</Link>
                 </li>
                 <li>
+                  <Link to={process.env.PUBLIC_URL + "/notificationlist"}>
+                    Notification
+                  </Link>
+                </li>
+                <li>
                   <Link to={process.env.PUBLIC_URL + "/my-account"}>
                     My Account
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    onClick={(e) =>
-                      window.localStorage.removeItem("auth-token")
-                    }
+                  <Link to={process.env.PUBLIC_URL + "/wallettransaclist"}>
+                      Wallet Transaction 
+                  </Link>
+                </li>
+                <li>
+                  <Link to={process.env.PUBLIC_URL + "/walletmoney"}>
+                      Wallet Recharge 
+                  </Link>
+                </li>
+                <li>
+                  <Link to={process.env.PUBLIC_URL + "/"}
+                    // onClick={(e) =>{(
+                    //   window.localStorage.clear()
+                      
+                    //   //localStorage.removeItem("auth-token","userInfo")
+                    // )}
+                    onClick = {(e) => handleLogout()}
+                    //}
                   >
                     Logout
                   </Link>

@@ -32,7 +32,7 @@ const ProductGridListSingle = ({
   const getUsers = async () => {
     const res = await axios
       .get(
-        `http://35.154.86.59/api/admin/productbycategory/6188b78b330297da131afef8`
+        `http://13.235.180.192/api/admin/productbycategory/6188b78b330297da131afef8`
       )
       .then(data => {
         console.log(data);

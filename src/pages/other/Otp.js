@@ -19,8 +19,8 @@ import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
         this.state= {
           customer_email:"",
           // visible : false,
-          mobile:"12345678",
-          otp: "1234",
+          mobile:"",
+          otp: "123456",
           msg:"",
      
         //   "status": true,
@@ -37,25 +37,13 @@ import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
       this.handleSubmit = this.handleSubmit.bind(this);
     } 
 
-
-  
-  
-    
-
-  
-  
   resenddd = () => {
-  
     this.setState({otp:''})
     this.interval()
-        this.sendOtp()
-    
-    
-    
-      }
-      interval() {
-  
-        this.setState({ seconds: 26 });
+    this.sendOtp()
+  }
+  interval() {
+   this.setState({ seconds: 26 });
     
         // let myInterval = setInterval(() => {
         //     if (this.state.seconds == 0) {
@@ -64,7 +52,7 @@ import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
         //         this.setState({ seconds: this.state.seconds - 1 });
         //     }
         // }, 1000)
-    }
+  }
   handleChange(evt) {
   // const value=evt.target.value;
   this.setState({ [evt.target.name]: evt.target.value });
@@ -83,7 +71,7 @@ import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
         //     status: this.state.status,
         //   };
                 
-                  axios.post("http://35.154.86.59/api/user/verifyotp",this.state)
+                  axios.post("http://13.235.180.192:8000/user/verifyotp",this.state)
             
            .then(res => {
                 console.log(res);

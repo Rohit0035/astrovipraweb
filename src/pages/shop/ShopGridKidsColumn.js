@@ -77,7 +77,7 @@ const ShopGridKidsColumn = ({
   useEffect(() => {
     async function getData() {
       const response = await fetch(
-        "http://35.154.86.59/api/admin/getproductbytagname/Kids"
+        "http://13.235.180.192/api/admin/getproductbytagname/Kids"
       );
 
       const data = await response.json();

@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React, { Fragment } from "react";
 import HeaderOne from "../wrappers/header/HeaderOne";
 import FooterOne from "../wrappers/footer/FooterOne";
+import ProfileDetail from "../components/astrology/profiledetail";
 
 const LayoutOne = ({
   children,
@@ -18,6 +19,7 @@ const LayoutOne = ({
         headerPaddingClass={headerPaddingClass}
         headerPositionClass={headerPositionClass}
       />
+      <ProfileDetail/>
       {children}
       <FooterOne
         backgroundColorClass="bg-gray"

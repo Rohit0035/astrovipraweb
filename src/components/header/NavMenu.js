@@ -166,22 +166,86 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
             </Link>
           </li> */}
            <li>
-              <Link>Services</Link>
+              <Link to="/kundaliform">Kundli Matching</Link>
            </li>
 
            <li>
-              <Link>Talk To Astrologer</Link>
+              <Link to="/allastrologerlist">Talk Astrologer</Link>
            </li>
 
            <li>
-              <Link>Blog</Link>
-           </li>
+              <Link>Horoscopes</Link>
+                <ul className="submenu">
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/heroscopesall"}>
+                            {/* {strings["Horoscope 2022"]} */}
+                            Horoscope 2022
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/heroscopestwo"}>
+                            {/* {strings["Today's Horoscope"]} */}
+                            Today's Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Weekly Horoscope"]} */}
+                            Weekly Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Monthly Horoscope"]} */}
+                            Monthly Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Yearly Horoscope"]} */}
+                            Yearly Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Daily Horoscope"]} */}
+                            Daily Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Tomorrow's Horoscope"]} */}
+                            Tomorrow's Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings["Yesterday's Horoscope"]} */}
+                             Yesterday's Horoscope
+                          </Link>
+                    </li>
+                    <li className="">
+                          <Link to={process.env.PUBLIC_URL + "/"}>
+                            {/* {strings[" Chinese Horoscope"]} */}
+                             Chinese Horoscope
+                          </Link>
+                    </li>
+                </ul>
+             </li>
+
+
+             <li className="">
+                <Link to={process.env.PUBLIC_URL + "/astromallList"}>
+                    {/* {strings["Monthly Horoscope"]} */}
+                     Astromall
+                 </Link>
+              </li>
            
-          <li>
+          {/* <li>
              <Link to={process.env.PUBLIC_URL + "/aboutdetail"}>
                 {strings["about_us"]}
              </Link> 
-          </li>
+          </li> */}
           {/* {sidebarMenu ? (
                 <span>
                    <i className="fa fa-angle-right"></i> 
@@ -517,11 +581,11 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
               </li>
             </ul>
           </li> */}
-          <li>
+          {/* <li>
             <Link to={process.env.PUBLIC_URL + "/contact"}>
               {strings["contact_us"]}
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>

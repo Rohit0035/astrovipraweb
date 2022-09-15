@@ -38,7 +38,7 @@ class AstroTeam extends React.Component {
                                         </Link>
                                         <Link className="btn btn-primary btn-sm">
                                             <i class="fa fa-phone"></i> Call
-                                            <small>   /20 per Hour</small>
+                                            <small>/ 20 <i class="fa fa-inr" aria-hidden="true"></i>  per Hour</small>
                                         </Link>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@ class AstroTeam extends React.Component {
                                          </ul>
                                          <Link  to="/astrologerdetail" className="btn btn-primary btn-sm">
                                             <i class="fa fa-phone"></i> Call Now
-                                            <small> <i class="fa fa-inr" aria-hidden="true"></i>20/Hour</small>
+                                            <small>  20 <i class="fa fa-inr" aria-hidden="true"></i>Hour</small>
                                          </Link>
                                         {/* <ul className="list-inline">
                                             <li className="list-inline-item">
@@ -110,7 +110,7 @@ class AstroTeam extends React.Component {
                                         </Link>
                                         <Link className="btn btn-primary btn-sm">
                                             <i class="fa fa-phone"></i> Call
-                                            <small>   /20 per Hour</small>
+                                            <small>/ 20  <i class="fa fa-inr" aria-hidden="true"></i>  per Hour</small>
                                         </Link>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@ class AstroTeam extends React.Component {
                                          </ul>
                                          <Link to="/astrologerdetail" className="btn btn-primary btn-sm">
                                             <i class="fa fa-phone"></i> Call Now
-                                            <small> <i class="fa fa-inr" aria-hidden="true"></i>20/Hour</small>
+                                            <small> 20 <i class="fa fa-inr" aria-hidden="true"></i>  /Hour </small>
                                          </Link>
                                        
                                     </div>
@@ -161,7 +161,7 @@ class AstroTeam extends React.Component {
                                         </Link>
                                         <Link className="btn btn-primary btn-sm">
                                             <i class="fa fa-phone"></i> Call
-                                            <small>   /20 per Hour</small>
+                                            <small> / 20  <i class="fa fa-inr" aria-hidden="true"></i>  per Hour</small>
                                         </Link>
                                     </div>
                                 </div>
@@ -186,7 +186,7 @@ class AstroTeam extends React.Component {
                                          </ul>
                                          <Link to="/astrologerdetail" className="btn btn-primary btn-sm">
                                             <i class="fa fa-phone"></i> Call Now
-                                            <small> <i class="fa fa-inr" aria-hidden="true"></i>20/Hour</small>
+                                            <small>  <i class="fa fa-inr" aria-hidden="true"></i> 20/Hour</small>
                                          </Link>
                                         
                                     </div>
@@ -212,7 +212,7 @@ class AstroTeam extends React.Component {
                                         </Link>
                                         <Link className="btn btn-primary btn-sm">
                                             <i class="fa fa-phone"></i> Call
-                                            <small>   /20 per Hour</small>
+                                            <small> /<i class="fa fa-inr" aria-hidden="true"></i>   20 per Hour</small>
                                         </Link>
                                     </div>
                                 </div>
@@ -237,7 +237,7 @@ class AstroTeam extends React.Component {
                                          </ul>
                                          <Link to="/astrologerdetail" className="btn btn-primary btn-sm">
                                             <i class="fa fa-phone"></i> Call Now
-                                            <small> <i class="fa fa-inr" aria-hidden="true"></i>20/Hour</small>
+                                            <small>  20  <i class="fa fa-inr" aria-hidden="true"></i>  /Hour</small>
                                          </Link>
                                        
                                     </div>
